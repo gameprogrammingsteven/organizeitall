@@ -28,6 +28,7 @@
 		3330D335241F29BB003BB8F5 /* Task+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3330D333241F29BB003BB8F5 /* Task+CoreDataProperties.swift */; };
 		3330D337241FAB84003BB8F5 /* CreateListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3330D336241FAB84003BB8F5 /* CreateListViewController.swift */; };
 		336F15132420836C00E8D693 /* EditListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 336F15122420836C00E8D693 /* EditListViewController.swift */; };
+		BDCD27D2244FFBD100CFE90A /* Circle.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDCD27D1244FFBD100CFE90A /* Circle.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +76,7 @@
 		3330D333241F29BB003BB8F5 /* Task+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Task+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		3330D336241FAB84003BB8F5 /* CreateListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateListViewController.swift; sourceTree = "<group>"; };
 		336F15122420836C00E8D693 /* EditListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditListViewController.swift; sourceTree = "<group>"; };
+		BDCD27D1244FFBD100CFE90A /* Circle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Circle.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,6 +148,7 @@
 		33233F9024148DA700A9395D /* OrganizeItAll */ = {
 			isa = PBXGroup;
 			children = (
+				BDCD27D3244FFBDD00CFE90A /* Core Engine */,
 				33233FC72415AFAE00A9395D /* views */,
 				33056E11241A56F400E2FBF9 /* model */,
 				33233F9124148DA700A9395D /* AppDelegate.swift */,
@@ -205,6 +208,22 @@
 				33233FCC2415B19C00A9395D /* TaskTableViewController.swift */,
 			);
 			path = task;
+			sourceTree = "<group>";
+		};
+		BDCD27D0244FFBB000CFE90A /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				BDCD27D1244FFBD100CFE90A /* Circle.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		BDCD27D3244FFBDD00CFE90A /* Core Engine */ = {
+			isa = PBXGroup;
+			children = (
+				BDCD27D0244FFBB000CFE90A /* UI */,
+			);
+			path = "Core Engine";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -338,6 +357,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BDCD27D2244FFBD100CFE90A /* Circle.swift in Sources */,
 				3330D334241F29BB003BB8F5 /* List+CoreDataProperties.swift in Sources */,
 				3304C7C4241DD174007BC384 /* UIColorExtension.swift in Sources */,
 				3330D32B241F2823003BB8F5 /* OrganizeItAll.xcdatamodeld in Sources */,
