@@ -19,20 +19,19 @@ class ScrollingKBHandlingViewController: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         // Do any additional setup after loading the view.
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillHideNotification, object: nil)
+        
+        self.kbHandlingScrollview.contentSize = self.kbHandlingScrollview.bounds.size
+
     }
 
     @objc func keyboardWillShow(notification: Notification) {
         if let userInfo = notification.userInfo {
             if let keyboardSize = (userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
                 
-                let insets = UIEdgeInsets(top: 0, left: 0, bottom: keyboardSize.height, right: 0)
+                kbHandlingScrollview.contentSize = CGSize(
+                    width: kbHandlingScrollview.contentSize.width, height: kbHandlingScrollview.bounds.size.height + keyboardSize.height)
                 
-                self.kbHandlingScrollview.contentInset = insets
-                self.kbHandlingScrollview.scrollIndicatorInsets = insets
-
-                UIView.animate(withDuration: animDuraction){
-                    self.view.layoutIfNeeded()
-                }
+                kbHandlingScrollview.setContentOffset(CGPoint(x: 0, y:  keyboardSize.height), animated: true)
             }
         }
     }

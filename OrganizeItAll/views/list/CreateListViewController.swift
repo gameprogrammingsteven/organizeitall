@@ -35,7 +35,7 @@ class CreateListViewController: ScrollingKBHandlingViewController {
         
         tfTitle.becomeFirstResponder()
         
-        
+    
         if let task = task {
             tfTitle.text = task.title
             tvDescription.text = task.detail
