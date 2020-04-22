@@ -17,7 +17,7 @@ import UIKit
 
 class CustomStackview: UIView {
     
-    @IBInspectable var isVertical = true
+    @IBInspectable var isVertical: Bool = true
     @IBInspectable var spacing: CGFloat = 0.0
     var reversed = false;
     
