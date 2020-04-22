@@ -13,11 +13,24 @@ class ListTableViewCell: UITableViewCell {
     
     @IBOutlet weak var lblName: UILabel!
     
-    @IBOutlet weak var imgView: UIImageView!
+    @IBOutlet weak var insideCircle: UIView!
+    
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+        innerTableCellInit()
+    }
+    
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+        innerTableCellInit()
+    }
+    
+    func innerTableCellInit() { //Refactor possibly into common file
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        self.insideCircle.backgroundColor = .randomColor()
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -37,23 +50,6 @@ class ListTableViewCell: UITableViewCell {
     }
     
     //https://github.com/raghurammahathi/Tutorials/blob/79d8cf3a67f86282c381df46b62f24413b15b663/Core%20Graphics/Shapes/Shapes/ViewController.swift
-    func drawCircle(){
-        UIGraphicsBeginImageContextWithOptions(CGSize(width: 256, height: 256), false, 0)
-        let context = UIGraphicsGetCurrentContext()
-        
-        let rectangle = CGRect(x: 5, y: 5, width: 246, height: 246)
-        context?.setFillColor(UIColor.randomColor().cgColor)
-        context?.setStrokeColor(UIColor.black.cgColor)
-        context?.setLineWidth(6)
-        
-        context?.addEllipse(in: rectangle)
-        context?.drawPath(using: CGPathDrawingMode.fillStroke)
-        
-        let img = UIGraphicsGetImageFromCurrentImageContext()
-        UIGraphicsEndImageContext()
-        imgView.image = img
-        
-        
-    }
+   
     
 }

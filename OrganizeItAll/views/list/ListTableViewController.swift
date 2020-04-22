@@ -67,10 +67,7 @@ class ListTableViewController: UITableViewController {
      */
     func configureTableCell(cell : ListTableViewCell, at indexPath: IndexPath) -> ListTableViewCell {
         let task = resultsController.object(at: indexPath)
-        
-        //2d Quartz graphics (IOS core graphics)
-        cell.drawCircle()
-        
+                
         cell.lblName?.text = task.title
         
         
