@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-class CreateListViewController: UIViewController {
+class CreateListViewController: ScrollingKBHandlingViewController {
     
     @IBOutlet weak var lblHeader: UILabel!
     
@@ -30,7 +30,7 @@ class CreateListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+//        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         
         
         tfTitle.becomeFirstResponder()
@@ -43,8 +43,6 @@ class CreateListViewController: UIViewController {
         }else{
             lblHeader.text = "Create New List"
         }
-        
-        
         
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(CreateListViewController.dismissKeyboard))
         
@@ -63,18 +61,18 @@ class CreateListViewController: UIViewController {
     
     
     //https://stackoverflow.com/a/54100880
-    @objc func keyboardWillShow(notification: Notification) {
-        
-        if let userInfo = notification.userInfo {
-            if let keyboardSize = (userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
-                constraintFromKyHeight.constant = keyboardSize.height + 10
-                
-                UIView.animate(withDuration: 0.3){
-                    self.view.layoutIfNeeded()
-                }
-            }
-        }
-    }
+//    @objc func keyboardWillShow(notification: Notification) {
+//
+//        if let userInfo = notification.userInfo {
+//            if let keyboardSize = (userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
+//                constraintFromKyHeight.constant = keyboardSize.height + 10
+//
+//                UIView.animate(withDuration: 0.3){
+//                    self.view.layoutIfNeeded()
+//                }
+//            }
+//        }
+//    }
     
     
     @IBAction func save(_ sender: UIButton) {
