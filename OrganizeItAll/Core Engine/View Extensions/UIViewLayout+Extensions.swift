@@ -68,7 +68,8 @@ extension UIView {
         }
     }
     
-    var marginLeft: CGFloat {
+    
+    @IBInspectable var marginLeft: CGFloat {
         get {
             return objc_getAssociatedObject(self, &keyLeftMargin) as? CGFloat ?? 0
         }
@@ -77,7 +78,7 @@ extension UIView {
         }
     }
     
-    var marginRight: CGFloat {
+    @IBInspectable var marginRight: CGFloat {
         get {
             return objc_getAssociatedObject(self, &keyRightMargin) as? CGFloat ?? 0
         }
@@ -86,7 +87,7 @@ extension UIView {
         }
     }
     
-    var marginTop: CGFloat {
+    @IBInspectable var marginTop: CGFloat {
         get {
             return objc_getAssociatedObject(self, &keyTopMargin) as? CGFloat ?? 0
         }
@@ -95,7 +96,7 @@ extension UIView {
         }
     }
     
-    var marginBottom: CGFloat {
+    @IBInspectable var marginBottom: CGFloat {
         get {
             return objc_getAssociatedObject(self, &keyBottomMargin) as? CGFloat ?? 0
         }
