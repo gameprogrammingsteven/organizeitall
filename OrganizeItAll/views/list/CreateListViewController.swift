@@ -30,9 +30,6 @@ class CreateListViewController: ScrollingKBHandlingViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
-        
-        
         tfTitle.becomeFirstResponder()
         
     
@@ -56,24 +53,6 @@ class CreateListViewController: ScrollingKBHandlingViewController {
         //Causes the view (or one of its embedded text fields) to resign the first responder status.
         view.endEditing(true)
     }
-    
-    //MARK: - Actions
-    
-    
-    //https://stackoverflow.com/a/54100880
-//    @objc func keyboardWillShow(notification: Notification) {
-//
-//        if let userInfo = notification.userInfo {
-//            if let keyboardSize = (userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
-//                constraintFromKyHeight.constant = keyboardSize.height + 10
-//
-//                UIView.animate(withDuration: 0.3){
-//                    self.view.layoutIfNeeded()
-//                }
-//            }
-//        }
-//    }
-    
     
     @IBAction func save(_ sender: UIButton) {
         guard let title = tfTitle.text, !title.isEmpty else {
