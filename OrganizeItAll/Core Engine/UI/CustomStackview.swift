@@ -18,6 +18,7 @@ import UIKit
 class CustomStackview: UIView {
     
     @IBInspectable var isVertical = true
+    @IBInspectable var spacing: CGFloat = 0.0
     var reversed = false;
     
     override func layoutSubviews() {
@@ -34,7 +35,7 @@ class CustomStackview: UIView {
                         continue
                     }
                     tempSubview.frame = CGRect(x: tempSubview.frame.origin.x, y: tempSubview.marginTop + lastY, width: tempSubview.bounds.size.width, height: tempSubview.bounds.size.height)
-                    lastY = lastY + tempSubview.bounds.size.height + tempSubview.marginBottom;
+                    lastY = lastY + tempSubview.bounds.size.height + tempSubview.marginBottom + spacing;
                 }
             }
             else if(reversed == true) { //this is unfinished due to sleep, and not needed.
