@@ -14,6 +14,60 @@ private var keyTopMargin = 0
 private var keyBottomMargin = 0
 
 extension UIView {
+    var x: CGFloat {
+        get {
+            return frame.origin.x
+        }
+        set {
+            frame = CGRect(x: newValue, y: frame.origin.y, width: bounds.size.width, height: bounds.size.height)
+        }
+    }
+    
+    var y: CGFloat {
+        get {
+            return frame.origin.y
+        }
+        set {
+            frame = CGRect(x: frame.origin.x, y: newValue, width: bounds.size.width, height: bounds.size.height)
+        }
+    }
+    
+    var width: CGFloat {
+        get {
+            return bounds.size.width
+        }
+        set {
+            frame = CGRect(x: frame.origin.y, y: frame.origin.y, width: newValue, height: bounds.size.height)
+        }
+    }
+    
+    var height: CGFloat {
+        get {
+            return bounds.size.height
+        }
+        set {
+            frame = CGRect(x: frame.origin.x, y: frame.origin.y, width: bounds.size.width, height: newValue)
+        }
+    }
+    
+    var right: CGFloat {
+        get {
+            return frame.origin.x + bounds.size.width
+        }
+        set {
+            frame = CGRect(x: newValue - bounds.size.width, y: frame.origin.y, width: bounds.size.width, height: bounds.size.height)
+        }
+    }
+    
+    var bottom: CGFloat {
+        get {
+            return frame.origin.y + bounds.size.height
+        }
+        set {
+            frame = CGRect(x: frame.origin.x, y: newValue - bounds.size.height, width: bounds.size.width, height: bounds.size.height)
+        }
+    }
+    
     var marginLeft: CGFloat {
         get {
             return objc_getAssociatedObject(self, &keyLeftMargin) as? CGFloat ?? 0
