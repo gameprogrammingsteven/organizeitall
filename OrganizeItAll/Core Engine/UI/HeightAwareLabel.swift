@@ -14,6 +14,7 @@ class HeightAwareLabel: UILabel {
         resizeHeightForText()
     }
     
+    // https://stackoverflow.com/questions/30450434/figure-out-size-of-uilabel-based-on-string-in-swift
     //For use in StackView using dynamic height, vertical
     //ensure numLines is unlimited, (set to 0)
     func resizeHeightForText() {
