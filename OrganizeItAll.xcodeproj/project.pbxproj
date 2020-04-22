@@ -27,6 +27,7 @@
 		336F15132420836C00E8D693 /* EditListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 336F15122420836C00E8D693 /* EditListViewController.swift */; };
 		BDCD27D2244FFBD100CFE90A /* Circle.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDCD27D1244FFBD100CFE90A /* Circle.swift */; };
 		BDCD27D6244FFC4300CFE90A /* MView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDCD27D5244FFC4300CFE90A /* MView.swift */; };
+		BDEE47FD245006A70024A4C8 /* ScrollingKBHandlingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDEE47FC245006A70024A4C8 /* ScrollingKBHandlingViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +74,7 @@
 		336F15122420836C00E8D693 /* EditListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditListViewController.swift; sourceTree = "<group>"; };
 		BDCD27D1244FFBD100CFE90A /* Circle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Circle.swift; sourceTree = "<group>"; };
 		BDCD27D5244FFC4300CFE90A /* MView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MView.swift; sourceTree = "<group>"; };
+		BDEE47FC245006A70024A4C8 /* ScrollingKBHandlingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollingKBHandlingViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -208,6 +210,7 @@
 			children = (
 				BDCD27D4244FFC1800CFE90A /* View Extensions */,
 				BDCD27D0244FFBB000CFE90A /* UI */,
+				BDEE47FC245006A70024A4C8 /* ScrollingKBHandlingViewController.swift */,
 			);
 			path = "Core Engine";
 			sourceTree = "<group>";
@@ -355,6 +358,7 @@
 				3330D334241F29BB003BB8F5 /* List+CoreDataProperties.swift in Sources */,
 				3304C7C4241DD174007BC384 /* UIColorExtension.swift in Sources */,
 				3330D32B241F2823003BB8F5 /* OrganizeItAll.xcdatamodeld in Sources */,
+				BDEE47FD245006A70024A4C8 /* ScrollingKBHandlingViewController.swift in Sources */,
 				33056E44241CF40500E2FBF9 /* Task+CoreDataClass.swift in Sources */,
 				3330D335241F29BB003BB8F5 /* Task+CoreDataProperties.swift in Sources */,
 				33056E16241B3FE100E2FBF9 /* CoreDataStack.swift in Sources */,
