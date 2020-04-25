@@ -12,8 +12,9 @@ class ListTableViewCell: UITableViewCell {
     
     
     @IBOutlet weak var lblName: UILabel!
-    
     @IBOutlet weak var insideCircle: UIView!
+    
+    static let minimumHeight: CGFloat  = 44
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)

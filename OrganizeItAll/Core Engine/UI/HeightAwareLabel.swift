@@ -10,8 +10,10 @@ import UIKit
 
 class HeightAwareLabel: UILabel {
 
-    override func awakeFromNib() {
-        resizeHeightForText()
+    override var text: String? {
+        didSet {
+            resizeHeightForText()
+        }
     }
     
     // https://stackoverflow.com/questions/30450434/figure-out-size-of-uilabel-based-on-string-in-swift
@@ -22,6 +24,7 @@ class HeightAwareLabel: UILabel {
         sizeToFit()
         setNeedsLayout()
         setNeedsDisplay()
+        superview?.setNeedsLayout()
     }
     
     open override func sizeThatFits(_ size: CGSize) -> CGSize {

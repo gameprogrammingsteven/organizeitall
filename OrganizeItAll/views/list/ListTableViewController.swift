@@ -127,6 +127,21 @@ class ListTableViewController: UITableViewController {
         return UISwipeActionsConfiguration(actions: [action])
     }
     
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        
+        //The below numbers can be automatically calculated by loading the xib, grabbing the numbers dynamically, then saving the numbers. That would be dynamid. To save time, I just did it this way. The other way lets you change the xib without changing code. Seems like a hassle, until you compare it to constraints, along with needing to cache the post-layout numbers just to get smooth scrolling, when dynamic text, such as StackView non-custom.
+        //Same for font, grab via xib on just loading a cell (not attached to table, just loaded then erased, in an init function)        
+        let stackViewYValue: CGFloat = 11
+        let stackLeftXValue: CGFloat = 66
+        let stackRightSpacing: CGFloat = 32
+        let stackWidth = UIScreen.main.bounds.size.width - stackLeftXValue - stackRightSpacing
+        let task = resultsController.object(at: indexPath)
+        let font = UIFont.systemFont(ofSize: 17)
+        let stackHeight = task.title.boundsFor(maxWidth: stackWidth, font: font).size.height
+        let totalHeight = stackViewYValue + stackHeight
+        
+        return CGFloat.maximum(totalHeight, ListTableViewCell.minimumHeight)
+    }
     
     // MARK: - Navigation
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
